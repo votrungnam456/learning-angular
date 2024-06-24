@@ -1,14 +1,14 @@
 import { Component, inject } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { ActivatedRoute } from '@angular/router';
-import { HousingService } from '../housing.service';
-import { HousingLocation } from '../housinglocation';
+import { ActivatedRoute, RouterModule } from '@angular/router';
+import { HousingService } from '../../../core/services/housing.service';
+import { HousingLocation } from '../../../shared/interfaces/housing-location.interface';
 import { FormControl, FormGroup, ReactiveFormsModule } from '@angular/forms';
 
 @Component({
   selector: 'app-details',
   standalone: true,
-  imports: [CommonModule, ReactiveFormsModule],
+  imports: [CommonModule, ReactiveFormsModule, RouterModule],
   templateUrl: './details.component.html',
   styleUrl: './details.component.scss',
 })
@@ -23,9 +23,11 @@ export class DetailsComponent {
   });
   constructor() {
     const housingLocationId = parseInt(this.route.snapshot.params['id'], 10);
+    console.log(housingLocationId);
     this.housingService
       .getHousingLocationById(housingLocationId)
       .then((housingLocation) => {
+        console.log(housingLocation);
         this.housingLocation = housingLocation;
       });
   }

@@ -1,0 +1,11 @@
+<section class="results">
+    <div *ngFor="let product of productList">
+        <!-- <app-housing-location [housingLocation]="housingLocation"></app-housing-location> -->
+        <div>
+            <h1>{{product.name}}</h1>
+            <p>Price: {{product.price}}</p>
+
+            <button [routerLink]="['/shopping/details', product.id]">More Detail</button>
+        </div>
+    </div>
+</section>

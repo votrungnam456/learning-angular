@@ -1,8 +1,8 @@
 import { Component, inject } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { HousingLocationComponent } from '../housing-location/housing-location.component';
-import { HousingLocation } from '../housinglocation';
-import { HousingService } from '../housing.service';
+import { HousingLocation } from '../../../shared/interfaces/housing-location.interface';
+import { HousingService } from '../../../core/services/housing.service';
 import { RouterModule } from '@angular/router';
 @Component({
   selector: 'app-home',
@@ -32,5 +32,9 @@ export class HomeComponent {
       (housingLocation) =>
         housingLocation?.city.toLowerCase().includes(text.toLowerCase())
     );
+  }
+  searchEnter(e: Event) {
+    e.preventDefault();
+    e.stopPropagation();
   }
 }
