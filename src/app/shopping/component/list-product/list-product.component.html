@@ -1,11 +1,12 @@
 <section class="results">
-    <div *ngFor="let product of productList">
+    <div>
+        <input type="text" placeholder="Filter by city" #filter (keyup.enter)="filterResults(filter.value)">
+        <button class="primary" type="button" (click)="filterResults(filter.value)">Search</button>
+        <button class="secondary" type="button" (click)="clearFilter()">Clear</button>
+    </div>
+    <div *ngFor="let product of filteredProductList">
         <!-- <app-housing-location [housingLocation]="housingLocation"></app-housing-location> -->
-        <div>
-            <h1>{{product.name}}</h1>
-            <p>Price: {{product.price}}</p>
-
-            <button [routerLink]="['/shopping/details', product.id]">More Detail</button>
-        </div>
+        <list-product-item [product]="product"
+            (addProductToSearchBar)="addProductToSearchBar($event)"></list-product-item>
     </div>
 </section>

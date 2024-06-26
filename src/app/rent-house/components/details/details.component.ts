@@ -23,7 +23,6 @@ export class DetailsComponent {
   });
   constructor() {
     const housingLocationId = parseInt(this.route.snapshot.params['id'], 10);
-    console.log(housingLocationId);
     this.housingService
       .getHousingLocationById(housingLocationId)
       .then((housingLocation) => {

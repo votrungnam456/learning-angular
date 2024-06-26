@@ -2,10 +2,16 @@
     <div>
         <input type="text" placeholder="Filter by city" #filter (keyup.enter)="filterResults(filter.value)">
         <button class="primary" type="button" (click)="filterResults(filter.value)">Search</button>
+        <button class="secondary" type="button" (click)="clearFilter()">Clear</button>
     </div>
 </section>
 <section class="results">
-    <div *ngFor="let housingLocation of filteredLocationList">
-        <app-housing-location [housingLocation]="housingLocation"></app-housing-location>
-    </div>
+    <ng-container>
+        <div *ngFor="let housingLocation of filteredLocationList">
+            <app-housing-location [housingLocation]="housingLocation"
+                (addToSearchBar)="addHousingLocationToSearchBar($event)">
+                <button hoverHighlight #housingNameBtn>Đây là button cha truyền cho con</button>
+            </app-housing-location>
+        </div>
+    </ng-container>
 </section>

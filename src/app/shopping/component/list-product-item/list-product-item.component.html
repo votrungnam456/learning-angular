@@ -1,1 +1,8 @@
-<p>list-product-item works!</p>
+<section class="results">
+    <div>
+        <h1>{{product.name}}</h1>
+        <p>Price: {{product.price}}</p>
+        <button [routerLink]="['/shopping/details', product.id]">More Detail</button>
+        <button hoverHighlight (click)="onAddSearchBar(product.name)">Add to searchbar</button>
+    </div>
+</section>
