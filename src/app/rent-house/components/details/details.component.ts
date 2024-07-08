@@ -26,7 +26,6 @@ export class DetailsComponent {
     this.housingService
       .getHousingLocationById(housingLocationId)
       .then((housingLocation) => {
-        console.log(housingLocation);
         this.housingLocation = housingLocation;
       });
   }

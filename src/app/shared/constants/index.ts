@@ -190,3 +190,33 @@ export const DATA_LIST_PRODUCT = {
     },
   ],
 };
+
+export const LIST_FORM_DATA = [
+  {
+    type: 'rent-house',
+    data: [
+      // { label: 'id', type: 'number', data: '' },
+      { label: 'name', type: 'string', data: '' },
+      { label: 'city', type: 'string', data: '' },
+      { label: 'state', type: 'string', data: '' },
+      { label: 'photo', type: 'string', data: '' },
+      { label: 'availableUnits', type: 'number', data: 0 },
+      { label: 'wifi', type: 'checkbox', data: false },
+      { label: 'laundry', type: 'checkbox', data: false },
+    ],
+  },
+  {
+    type: 'shopping',
+    data: [
+      // { label: 'id', type: 'string', data: 0},
+      { label: 'name', type: 'string', data: '' },
+      { label: 'category', type: 'string', data: '' },
+      { label: 'price', type: 'number', data: 0 },
+      { label: 'quantityInStock', type: 'number', data: 0 },
+      { label: 'description', type: 'string', data: '' },
+      { label: 'supplier.name', type: 'string', data: '' },
+      { label: 'supplier.contactNumber', type: 'string', data: '' },
+      { label: 'supplier.address', type: 'string', data: '' },
+    ],
+  },
+];

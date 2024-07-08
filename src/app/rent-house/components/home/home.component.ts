@@ -4,6 +4,7 @@ import {
   ContentChildren,
   ElementRef,
   ViewChild,
+  ViewEncapsulation,
   inject,
 } from '@angular/core';
 import { CommonModule } from '@angular/common';
@@ -23,6 +24,7 @@ import { HighlightDirective } from '../../../core/directives/hoverHightlight.dir
   ],
   templateUrl: './home.component.html',
   styleUrl: './home.component.scss',
+  encapsulation: ViewEncapsulation.None,
 })
 export class HomeComponent {
   @ViewChild('filter') filter: ElementRef<HTMLInputElement> | null = null;

@@ -1,0 +1,13 @@
+<main>
+    <button class="btn btn-primary" [routerLink]="['/rent-house']">back</button>
+
+    <ng-container *ngFor="let data of formData">
+        <form>
+            <div class="form-group">
+                <label for="[{{data.label}}]">{{data.label}}</label>
+                <input type="[{{data.type}}]" class="form-control" id="{{data.label}}" [(ngModel)]="data.data"
+                    name="{{data.label}}">
+            </div>
+        </form>
+    </ng-container>
+</main>

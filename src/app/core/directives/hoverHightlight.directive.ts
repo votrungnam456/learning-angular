@@ -1,4 +1,4 @@
-import { Directive, HostBinding, HostListener } from '@angular/core';
+import { Directive, HostBinding, HostListener, Input } from '@angular/core';
 
 @Directive({
   selector: '[hoverHighlight]',
@@ -6,13 +6,29 @@ import { Directive, HostBinding, HostListener } from '@angular/core';
 })
 export class HighlightDirective {
   @HostBinding('style.backgroundColor') backgroundColor: string;
+  @Input('hoverHighlight') isActive: boolean | undefined;
+
+  // private _isActive: boolean = false;
+  // @Input('appHighlightOnHover')
+  // set isActive(value: boolean) {
+  //   this._isActive = value !== undefined ? value : true;
+  // }
+
+  // get isActive(): boolean {
+  //   return this._isActive;
+  // }
   @HostListener('mouseenter') onMouseEnter() {
-    this.backgroundColor = 'yellow';
+    if (this.isActive) {
+      this.backgroundColor = 'yellow';
+    }
   }
   @HostListener('mouseleave') onMouseLeave() {
-    this.backgroundColor = 'inherit';
+    if (this.isActive) {
+      this.backgroundColor = '';
+    }
   }
   constructor() {
-    this.backgroundColor = 'inherit';
+    this.backgroundColor = '';
+    this.isActive = false;
   }
 }

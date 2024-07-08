@@ -4,9 +4,31 @@
         <button class="primary" type="button" (click)="filterResults(filter.value)">Search</button>
         <button class="secondary" type="button" (click)="clearFilter()">Clear</button>
     </div>
-    <div *ngFor="let product of filteredProductList">
-        <!-- <app-housing-location [housingLocation]="housingLocation"></app-housing-location> -->
-        <list-product-item [product]="product"
-            (addProductToSearchBar)="addProductToSearchBar($event)"></list-product-item>
+    <div *ngFor="let product of filteredProductList; let i = index">
+        <list-product-item [product]="product" (addProductToSearchBar)="addProductToSearchBar($event)">
+            <button [hoverHighlight]="i % 2 === 0" class="primary">Đây là button truyền từ component cha vào
+                con</button>
+        </list-product-item>
+    </div>
+
+
+
+    <div>===========================================Line ngăn cách========================================</div>
+    <button class="global-btn">Đây là button sử dụng style global</button>
+    <h1>Text này sử dụng Internal Stylesheet</h1>
+
+
+    <div class="container text-center">
+        <div class="row align-items-start">
+            <div class="col">
+                One of three columns
+            </div>
+            <div class="col">
+                One of three columns
+            </div>
+            <div class="col">
+                One of three columns
+            </div>
+        </div>
     </div>
 </section>

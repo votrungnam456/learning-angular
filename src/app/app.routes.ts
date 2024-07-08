@@ -37,6 +37,14 @@ export const routes: Routes = [
           ),
         title: 'Home details',
       },
+      {
+        path: 'add',
+        loadComponent: () =>
+          import('./rent-house/components/form-data/form-data.component').then(
+            (m) => m.FormDataComponent
+          ),
+        title: 'Add housing location',
+      },
       // {
       //   path: '',
       //   component: HomeComponent,

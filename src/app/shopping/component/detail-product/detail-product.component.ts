@@ -23,7 +23,6 @@ export class DetailProductComponent {
   });
   constructor() {
     const productId = this.route.snapshot.params['id'];
-    console.log(productId);
     this.productService.getProductById(productId).then((product) => {
       this.product = product;
     });

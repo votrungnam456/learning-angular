@@ -9,11 +9,12 @@ import {
 import { CommonModule } from '@angular/common';
 import { HousingLocation } from '../../../shared/interfaces/housing-location.interface';
 import { RouterModule } from '@angular/router';
+import { ListProductModule } from '../../../shopping/component/list-product/list-product.module';
 
 @Component({
   selector: 'app-housing-location',
   standalone: true,
-  imports: [RouterModule, CommonModule],
+  imports: [RouterModule, CommonModule, ListProductModule],
   templateUrl: './housing-location.component.html',
   styleUrl: './housing-location.component.scss',
 })
@@ -28,7 +29,7 @@ export class HousingLocationComponent {
   ngAfterContentInit() {
     // console.log();
     (this.housingNameBtn as any).forEach((element: any) => {
-      console.log(element.nativeElement);
+      // console.log(element.nativeElement);
     });
   }
 }
