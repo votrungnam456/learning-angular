@@ -4,10 +4,14 @@
     <ng-container *ngFor="let data of formData">
         <form>
             <div class="form-group">
-                <label for="[{{data.label}}]">{{data.label}}</label>
-                <input type="[{{data.type}}]" class="form-control" id="{{data.label}}" [(ngModel)]="data.data"
-                    name="{{data.label}}">
+                <label [ngClass]="data.type === 'checkbox'? 'form-check-label':''"
+                    for="{{data.label}}">{{data.label}}</label>
+                <input type="{{data.type}}" [ngClass]="data.type === 'checkbox' ? 'form-check-input':'form-control'"
+                    id="{{data.label}}" [(ngModel)]="data.data" name="{{data.label}}"
+                    placeholder="{{data.placeholder}}">
+                {{data.data}}
             </div>
         </form>
     </ng-container>
+    <button (click)="submitAction()" class="btn btn-primary">{{routeAction === 'add' ? 'Thêm':'Sửa'}}</button>
 </main>

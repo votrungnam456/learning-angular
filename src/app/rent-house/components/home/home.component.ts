@@ -24,7 +24,7 @@ import { HighlightDirective } from '../../../core/directives/hoverHightlight.dir
   ],
   templateUrl: './home.component.html',
   styleUrl: './home.component.scss',
-  encapsulation: ViewEncapsulation.None,
+  encapsulation: ViewEncapsulation.Emulated,
 })
 export class HomeComponent {
   @ViewChild('filter') filter: ElementRef<HTMLInputElement> | null = null;

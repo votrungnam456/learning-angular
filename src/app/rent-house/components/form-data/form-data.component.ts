@@ -30,6 +30,12 @@ export class FormDataComponent {
     );
     if (index !== -1) {
       this.formData = LIST_FORM_DATA[index].data;
+      console.log(LIST_FORM_DATA[index].data);
     }
+  }
+  isActive = false;
+  submitAction() {
+    console.log('submit action');
+    console.log(this.formData);
   }
 }
