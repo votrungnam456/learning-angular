@@ -1,7 +1,7 @@
 <section class="results">
     <div>
         <h1>{{product.name}}</h1>
-        <p>Price: {{product.price}}</p>
+        <p>Price: {{product.price | vnd }}</p>
         <button [routerLink]="['/shopping/details', product.id]">More Detail</button>
         <button [hoverHighlight]="true" (click)="onAddSearchBar(product.name)">Add to searchbar</button>
 

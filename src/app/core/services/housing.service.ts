@@ -26,4 +26,11 @@ export class HousingService {
     // tslint:disable-next-line
     console.log(firstName, lastName, email);
   }
+
+  async addHousingLocation(location: HousingLocation): Promise<void> {
+    // const data = await fetch(this.url, {
+    //   method: 'POST',
+    //   body
+    DATA_HOUSE.locations.push(location);
+  }
 }

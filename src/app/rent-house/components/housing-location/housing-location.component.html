@@ -2,8 +2,9 @@
     <section class="listing">
         <img class="listing-photo" [src]="housingLocation.photo" alt="Exterior photo of {{ housingLocation.name }}"
             crossorigin />
-        <h2 #housingName class="listing-heading">{{ housingLocation.name }}</h2>
-        <p class="listing-location">{{ housingLocation.city }}, {{ housingLocation.state }}</p>
+        <!-- sử dụng pipe -->
+        <h2 #housingName class="listing-heading">{{ housingLocation.name | uppercase }}</h2>
+        <p class="listing-location">{{ housingLocation.city}}, {{ housingLocation.state }}</p>
         <a [routerLink]="['/rent-house/details', housingLocation.id]">Learn More</a>
         <button (click)="addHousingLocationToSearchBar(housingLocation.city)">Add to searchbar</button>
         <ng-content></ng-content>

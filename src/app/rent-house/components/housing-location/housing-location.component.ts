@@ -10,11 +10,12 @@ import { CommonModule } from '@angular/common';
 import { HousingLocation } from '../../../shared/interfaces/housing-location.interface';
 import { RouterModule } from '@angular/router';
 import { ListProductModule } from '../../../shopping/component/list-product/list-product.module';
+import { VndPipe } from '../../../core/pipes/vndpipe.pipe';
 
 @Component({
   selector: 'app-housing-location',
   standalone: true,
-  imports: [RouterModule, CommonModule, ListProductModule],
+  imports: [RouterModule, CommonModule, ListProductModule, VndPipe],
   templateUrl: './housing-location.component.html',
   styleUrl: './housing-location.component.scss',
 })

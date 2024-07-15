@@ -3,4 +3,5 @@ export interface IFormData {
   type: string;
   data: string | number | boolean;
   placeholder: string;
+  params: string;
 }
